@@ -26,8 +26,8 @@ namespace TailSpin.SpaceGame.Web.Controllers
         }
 
         public async Task<IActionResult> Index(
-            int page = 1, 
-            int pageSize = 10, 
+            int page = 1,
+            int pageSize = 10,
             string mode = "",
             string region = ""
             )
@@ -60,7 +60,7 @@ namespace TailSpin.SpaceGame.Web.Controllers
             try
             {
                 // Form the query predicate.
-                // This expression selects all scores that match the provided game 
+                // This expression selects all scores that match the provided game
                 // mode and region (map).
                 // Select the score if the game mode or region is empty.
                 Expression<Func<Score, bool>> queryPredicate = score =>
@@ -121,7 +121,7 @@ namespace TailSpin.SpaceGame.Web.Controllers
             }
             catch (Exception)
             {
-                return RedirectToAction("/");
+                return RedirectToAction("Index");
             }
         }
 
